@@ -1,0 +1,6 @@
+{
+  "name": "NeuralBank - AI Fraud Detection System",
+  "description": "Professional Java-based AI-powered fraud detection system analyzing financial transactions with machine learning scoring, Admin configuration, detection reports, algorithm refinement, and complete OOP Java codebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
