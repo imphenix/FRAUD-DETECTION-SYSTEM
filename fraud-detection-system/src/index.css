@@ -1,0 +1,420 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Subtle cybernetic scanline and glowing animations */
+  @keyframes cyberScan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(1000%);
+    }
+  }
+
+  @keyframes cyberPulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(22, 119, 255, 0.15), 0 0 1px rgba(0, 217, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.25), 0 0 2px rgba(36, 149, 255, 0.6);
+    }
+  }
+
+  @keyframes radarSweep {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes subtleNodeGlow {
+    0%, 100% {
+      opacity: 0.35;
+      transform: scale(0.98);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Full-Screen Emergency Popup Animations */
+  @keyframes emergencyOverlayFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes emergencyOverlayFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes emergencyCardScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes emergencyCardScaleOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+  }
+
+  @keyframes emergencyPulsingGlow {
+    0%, 100% {
+      box-shadow: 0 0 35px rgba(239, 68, 68, 0.45), 0 0 0 2px rgba(239, 68, 68, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 65px rgba(220, 38, 38, 0.8), 0 0 0 4px rgba(220, 38, 38, 0.95);
+    }
+  }
+
+  @keyframes emergencyIconBlink {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes alertProgressBar {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+
+  .animate-cyber-glow {
+    animation: cyberPulseGlow 4s ease-in-out infinite;
+  }
+
+  .animate-radar-sweep {
+    animation: radarSweep 10s linear infinite;
+  }
+
+  .animate-node-glow {
+    animation: subtleNodeGlow 3s ease-in-out infinite;
+  }
+
+  .animate-emergency-overlay-in {
+    animation: emergencyOverlayFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-emergency-overlay-out {
+    animation: emergencyOverlayFadeOut 0.45s ease-in forwards;
+  }
+
+  .animate-emergency-popup-in {
+    animation: emergencyCardScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-emergency-popup-out {
+    animation: emergencyCardScaleOut 0.45s ease-in forwards;
+  }
+
+  .animate-emergency-card-pulse {
+    animation: emergencyPulsingGlow 1.8s ease-in-out infinite;
+  }
+
+  .animate-emergency-icon {
+    animation: emergencyIconBlink 1.4s ease-in-out infinite;
+  }
+
+  .animate-alert-progress {
+    animation: alertProgressBar 2.7s linear forwards;
+  }
+
+  /* Micro HUD Animations */
+  @keyframes scanlineBeam {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1000%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heartbeatPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    50% {
+      transform: scale(1.15);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+  }
+
+  @keyframes shimmerHighlight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  @keyframes shieldAuraGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 4px rgba(0, 217, 255, 0.35));
+      transform: scale(1);
+    }
+    50% {
+      filter: drop-shadow(0 0 14px rgba(0, 217, 255, 0.8));
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes rotateCW {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotateCCW {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-scanline {
+    animation: scanlineBeam 1.8s ease-in-out infinite;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeatPulse 2.4s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmerHighlight 2.5s infinite;
+  }
+
+  .animate-shield-glow {
+    animation: shieldAuraGlow 3.5s ease-in-out infinite;
+  }
+
+  .animate-scanner-cw {
+    animation: rotateCW 24s linear infinite;
+  }
+
+  .animate-scanner-ccw {
+    animation: rotateCCW 18s linear infinite;
+  }
+
+  /* Cyber Interactive Click & Transition Animations */
+  @keyframes cyberRipple {
+    0% {
+      transform: scale(0);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
+
+  @keyframes cardSweepBeam {
+    0% {
+      transform: translateX(-120%) skewX(-20deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      transform: translateX(240%) skewX(-20deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes navSweepGlow {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes tabSlideFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.995);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes dropdownSmoothScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translateY(-6px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes inputScanBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes rowSweepLine {
+    0% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 0;
+    }
+  }
+
+  .animate-ripple {
+    animation: cyberRipple 0.55s ease-out forwards;
+  }
+
+  .animate-card-sweep {
+    animation: cardSweepBeam 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-nav-sweep {
+    animation: navSweepGlow 1.8s ease-in-out infinite;
+  }
+
+  .animate-tab-content {
+    animation: tabSlideFade 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-dropdown-expand {
+    animation: dropdownSmoothScale 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .cyber-input-glow:focus-within {
+    box-shadow: 0 0 18px rgba(0, 217, 255, 0.28), 0 0 2px rgba(0, 217, 255, 0.8);
+    border-color: rgba(0, 217, 255, 0.85);
+  }
+
+  .cyber-table-row {
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cyber-table-row:hover {
+    background-color: rgba(14, 165, 233, 0.08);
+    box-shadow: inset 0 0 15px rgba(0, 217, 255, 0.08);
+  }
+
+  .cyber-table-row:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.8), transparent);
+    animation: rowSweepLine 0.6s ease-out forwards;
+  }
+}
+
+/* Custom cyber background patterns */
+.bg-cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(36, 149, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 149, 255, 0.05) 1px, transparent 1px);
+}
+
+.bg-cyber-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(0, 217, 255, 0.12) 1px, transparent 0);
+}
+
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07111F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A2E4C;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2495FF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-cyber-glow,
+  .animate-radar-sweep,
+  .animate-node-glow,
+  .animate-emergency-overlay-in,
+  .animate-emergency-overlay-out,
+  .animate-emergency-popup-in,
+  .animate-emergency-popup-out,
+  .animate-emergency-card-pulse,
+  .animate-emergency-icon,
+  .animate-alert-progress {
+    animation: none !important;
+  }
+}
+

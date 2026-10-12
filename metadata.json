@@ -1,0 +1,8 @@
+{
+  "name": "Fraud Detection System",
+  "description": "Enterprise-grade rule-based fraud detection web application with real-time risk scoring, multithreaded processing, JDBC transaction management, and an interactive investigation dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
